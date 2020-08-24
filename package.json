@@ -35,5 +35,8 @@
   },
   "devDependencies": {
     "rollup": "^2.26.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
