@@ -1,0 +1,39 @@
+{
+  "name": "rollup-plugin-minify-html-template-literals",
+  "version": "0.0.0",
+  "description": "Rollup plugin to minify HTML template literal strings",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exuanbo/rollup-plugin-minify-html-template-literals.git"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "minify",
+    "html",
+    "template",
+    "literals",
+    "lit-html"
+  ],
+  "author": {
+    "name": "exuanbo",
+    "email": "exuanbo@protonmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exuanbo/rollup-plugin-minify-html-template-literals/issues"
+  },
+  "homepage": "https://github.com/exuanbo/rollup-plugin-minify-html-template-literals#readme",
+  "dependencies": {
+    "@rollup/pluginutils": "^4.0.0",
+    "minify-html-literals": "^1.3.2"
+  },
+  "devDependencies": {
+    "rollup": "^2.26.5"
+  }
+}
