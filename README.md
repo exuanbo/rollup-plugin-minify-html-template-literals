@@ -7,6 +7,8 @@
 
 Uses minify-html-literals to minify HTML and CSS markup inside JavaScript template literal strings.
 
+This plugin supports Rollup v2.
+
 ## Usage
 
 ```js
@@ -49,3 +51,11 @@ export default {
   ]
 }
 ```
+
+## License
+
+[MIT](https://github.com/exuanbo/rollup-plugin-minify-html-template-literals/blob/master/LICENSE)
+
+## Donate
+
+<a href="https://www.buymeacoffee.com/exuanbo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" height="38.25px" width="162.75px"></a>
