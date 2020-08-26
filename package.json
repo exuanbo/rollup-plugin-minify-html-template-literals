@@ -36,9 +36,9 @@
     "minify-html-literals": "^1.3.2"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.1.2",
-    "rimraf": "^3.0.2",
+    "chai": "4.2.0",
+    "mocha": "8.1.2",
+    "rimraf": "3.0.2",
     "rollup": "2.26.5"
   },
   "publishConfig": {
