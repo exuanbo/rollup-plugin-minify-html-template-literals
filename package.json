@@ -2,8 +2,8 @@
   "name": "rollup-plugin-minify-html-template-literals",
   "version": "1.0.1",
   "description": "Rollup plugin to minify HTML template literal strings",
-  "main": "index.js",
-  "type": "module",
+  "main": "dist/rollup-plugin-minify-html-template-literals.js",
+  "module": "dist/rollup-plugin-minify-html-template-literals.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
