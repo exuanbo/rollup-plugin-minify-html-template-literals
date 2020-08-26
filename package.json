@@ -5,7 +5,9 @@
   "main": "dist/rollup-plugin-minify-html-template-literals.js",
   "module": "dist/rollup-plugin-minify-html-template-literals.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "pretest": "rollup -c",
+    "build": "rimraf ./dist/** && npm test"
   },
   "repository": {
     "type": "git",
