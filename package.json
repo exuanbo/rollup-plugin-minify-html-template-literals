@@ -20,6 +20,7 @@
     "html",
     "template",
     "literals",
+    "template-literals",
     "lit-html"
   ],
   "author": {
