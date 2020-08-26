@@ -44,9 +44,7 @@ export default {
       exclude: [],
       // minify-html-literals options
       // https://www.npmjs.com/package/minify-html-literals#options
-      options: null,
-      // Override rollup-pluginutils filter from include/exclude
-      filter: null
+      options: null
     })
   ]
 }
