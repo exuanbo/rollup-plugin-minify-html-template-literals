@@ -1,7 +1,7 @@
 import { createFilter } from '@rollup/pluginutils'
 import minify from 'minify-html-literals'
 
-export default function minifyHtml(pluginOptions = {}) {
+export default function minifyHTML(pluginOptions = {}) {
   if (!pluginOptions.filter) {
     pluginOptions.filter = createFilter(pluginOptions.include, pluginOptions.exclude)
   }
