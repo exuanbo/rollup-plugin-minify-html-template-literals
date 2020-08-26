@@ -10,9 +10,10 @@ Uses minify-html-literals to minify HTML and CSS markup inside JavaScript templa
 import babel from '@rollup/plugin-babel'
 import minifyHTML from 'rollup-plugin-minify-html-template-literals'
 import { terser } from "rollup-plugin-terser"
+
 export default {
-  entry: 'index.js',
-  dest: 'dist/index.js',
+  input: 'index.js',
+  output: { file: 'dist/index.js' },
   plugins: [
     minifyHTML(),
     // Order plugin before transpilers and other minifiers
@@ -28,8 +29,8 @@ By default, this will minify any tagged template literal string whose tag contai
 
 ```js
 export default {
-  entry: 'index.js',
-  dest: 'dist/index.js',
+  input: 'index.js',
+  output: { file: 'dist/index.js' },
   plugins: [
     minifyHTML({
       // minimatch of files to minify
