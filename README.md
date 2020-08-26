@@ -1,14 +1,17 @@
 # rollup-plugin-minify-html-template-literals
 
-[![npm](https://img.shields.io/npm/v/rollup-plugin-minify-html-template-literals.svg)](https://www.npmjs.com/package/rollup-plugin-minify-html-template-literals)
+[![npm](https://img.shields.io/npm/v/rollup-plugin-minify-html-template-literals.svg?style=flat-square)](https://www.npmjs.com/package/rollup-plugin-minify-html-template-literals)
+[![Travis CI](https://img.shields.io/travis/com/exuanbo/rollup-plugin-minify-html-template-literals/master.svg?style=flat-square)](https://travis-ci.com/github/exuanbo/rollup-plugin-minify-html-template-literals)
+[![David](https://img.shields.io/david/exuanbo/rollup-plugin-minify-html-template-literals.svg?style=flat-square)](https://david-dm.org/exuanbo/rollup-plugin-minify-html-template-literals)
+[![License](https://img.shields.io/github/license/exuanbo/rollup-plugin-minify-html-template-literals.svg?style=flat-square)](https://github.com/exuanbo/rollup-plugin-minify-html-template-literals/blob/master/LICENSE)
 
 Uses minify-html-literals to minify HTML and CSS markup inside JavaScript template literal strings.
 
 ## Usage
 
 ```js
-import babel from '@rollup/plugin-babel'
 import minifyHTML from 'rollup-plugin-minify-html-template-literals'
+import babel from '@rollup/plugin-babel'
 import { terser } from "rollup-plugin-terser"
 
 export default {
