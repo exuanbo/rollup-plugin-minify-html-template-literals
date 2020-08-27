@@ -14,13 +14,17 @@ var minify__default = /*#__PURE__*/_interopDefaultLegacy(minify);
  * @param {string[]} [pluginOptions.exclude] - minimatch of files not to minify
  * @param {Object} [pluginOptions.options] - minify-html-literals options https://www.npmjs.com/package/minify-html-literals#options
  */
+
 function minifyHTML(pluginOptions = {}) {
-  pluginOptions.filter = pluginutils.createFilter(pluginOptions.include, pluginOptions.exclude);
   const options = pluginOptions.options || {};
+  const { include, exclude } = pluginOptions;
   return {
     name: 'minify-html-template-literals',
     transform(code, id) {
-      if (!pluginOptions.filter(id)) return null
+      if (include || exclude) {
+        pluginOptions.filter = pluginutils.createFilter(include, exclude);
+        if (!pluginOptions.filter(id)) return null
+      }
       return minify__default['default'].minifyHTMLLiterals(code, { fileName: id, ...options })
     }
   }
