@@ -4,6 +4,9 @@
   "description": "Rollup plugin to minify HTML template literal strings",
   "main": "dist/rollup-plugin-minify-html-template-literals.js",
   "module": "dist/rollup-plugin-minify-html-template-literals.es.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "mocha",
     "pretest": "rollup -c",
