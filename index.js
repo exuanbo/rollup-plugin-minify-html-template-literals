@@ -9,12 +9,12 @@ import minify from 'minify-html-literals'
  * @param {Object} [pluginOptions.options] - minify-html-literals options https://www.npmjs.com/package/minify-html-literals#options
  */
 
-function minifyHTML(pluginOptions = {}) {
+function minifyHTML (pluginOptions = {}) {
   const options = pluginOptions.options || {}
   const { include, exclude } = pluginOptions
   return {
     name: 'minify-html-template-literals',
-    transform(code, id) {
+    transform (code, id) {
       if (include || exclude) {
         pluginOptions.filter = createFilter(include, exclude)
         if (!pluginOptions.filter(id)) return null

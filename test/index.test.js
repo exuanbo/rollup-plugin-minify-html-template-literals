@@ -1,3 +1,5 @@
+'use strict'
+
 const rollup = require('rollup').rollup
 const minifyHTML = require('..')
 const expect = require('chai').expect
@@ -24,7 +26,10 @@ const test = async (file, fileExp, pluginOpts = {}) => {
   const output = await bundle.generate({ format: 'es' })
 
   const code = output.output[0].code
-  const expected = fileExp === null ? null : fs.readFileSync(concat(fileExp || file, 'expected'), 'utf8')
+  const expected =
+    fileExp === null
+      ? null
+      : fs.readFileSync(concat(fileExp || file, 'expected'), 'utf8')
   return expect(code).to.equal(expected)
 }
 
