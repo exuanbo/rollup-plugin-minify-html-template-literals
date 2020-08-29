@@ -2,8 +2,8 @@
   "name": "rollup-plugin-minify-html-template-literals",
   "version": "1.0.2",
   "description": "Rollup plugin to minify HTML template literal strings",
-  "main": "index.cjs",
-  "module": "index.js",
+  "main": "index.js",
+  "module": "index.es.js",
   "directories": {
     "test": "test"
   },
