@@ -1,11 +1,5 @@
-'use strict';
-
-var pluginutils = require('@rollup/pluginutils');
-var minify = require('minify-html-literals');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var minify__default = /*#__PURE__*/_interopDefaultLegacy(minify);
+import { createFilter } from '@rollup/pluginutils'
+import minify from 'minify-html-literals'
 
 /**
  * https://github.com/exuanbo/rollup-plugin-minify-html-template-literals#options
@@ -16,18 +10,18 @@ var minify__default = /*#__PURE__*/_interopDefaultLegacy(minify);
  */
 
 function minifyHTML (pluginOptions = {}) {
-  const options = pluginOptions.options || {};
-  const { include, exclude } = pluginOptions;
+  const options = pluginOptions.options || {}
+  const { include, exclude } = pluginOptions
   return {
     name: 'minify-html-template-literals',
     transform (code, id) {
       if (include || exclude) {
-        pluginOptions.filter = pluginutils.createFilter(include, exclude);
+        pluginOptions.filter = createFilter(include, exclude)
         if (!pluginOptions.filter(id)) return null
       }
-      return minify__default['default'].minifyHTMLLiterals(code, { fileName: id, ...options })
+      return minify.minifyHTMLLiterals(code, { fileName: id, ...options })
     }
   }
 }
 
-module.exports = minifyHTML;
+export default minifyHTML

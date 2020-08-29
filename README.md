@@ -16,7 +16,7 @@ This plugin supports Rollup v2.
 ```js
 import minifyHTML from 'rollup-plugin-minify-html-template-literals'
 import babel from '@rollup/plugin-babel'
-import { terser } from "rollup-plugin-terser"
+import { terser } from 'rollup-plugin-terser'
 
 export default {
   input: 'index.js',
