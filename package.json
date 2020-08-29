@@ -47,8 +47,5 @@
     "prettier-standard": "16.4.1",
     "rimraf": "3.0.2",
     "rollup": "2.26.6"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   }
 }
