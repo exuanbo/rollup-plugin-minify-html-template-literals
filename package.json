@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run lint && mocha",
+    "test": "mocha",
     "pretest": "rollup -c",
     "build": "rimraf index.cjs && npm test",
     "lint": "prettier-standard --lint '**/*.js'",
