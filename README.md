@@ -23,7 +23,7 @@ export default {
   output: { file: 'dist/index.js' },
   plugins: [
     minifyHTML(),
-    // Order plugin before transpilers and other minifiers
+    // Order this plugin before other transpilers and minifiers
     babel(),
     terser()
   ]
@@ -34,21 +34,20 @@ By default, this will minify any tagged template literal string whose tag contai
 
 ## Options
 
-```js
-export default {
-  input: 'index.js',
-  output: { file: 'dist/index.js' },
-  plugins: [
-    minifyHTML({
-      // minimatch of files to minify
-      include: [],
-      // minimatch of files not to minify
-      exclude: [],
-      // minify-html-literals options
-      // https://www.npmjs.com/package/minify-html-literals#options
-      options: null
-    })
-  ]
+```ts
+declare const pluginOptions {
+  /**
+  * A picomatch pattern, or array of patterns, which specifies the files in the build the plugin should operate on.
+  */
+  include?: ReadonlyArray<string | RegExp> | string | RegExp | null
+  /**
+  * A picomatch pattern, or array of patterns, which specifies the files in the build the plugin should ignore.
+  */
+  exclude?: typeof pluginOptions.include
+  /**
+  * Minify options, see https://www.npmjs.com/package/minify-html-literals#options.
+  */
+  options?: DefaultOptions
 }
 ```
 
