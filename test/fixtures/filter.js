@@ -1,3 +1,5 @@
+import { exclude } from './exclude'
+
 const template = () => html`
   <style>
     .heading {
@@ -14,4 +16,4 @@ const template = () => html`
   </ul>
 `
 
-export { template }
+export { exclude, template }

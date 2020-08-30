@@ -17,24 +17,30 @@ const concat = (name, subdir) => {
   return filePath
 }
 
-const test = async (file, fileExp, pluginOpts = {}) => {
+const test = (done, file, pluginOpts = {}) => {
   const filePath = concat(file, 'fixtures')
-  const bundle = await rollup({
-    input: filePath,
-    plugins: [minifyHTML(pluginOpts)]
-  })
-  const output = await bundle.generate({ format: 'es' })
-
-  const code = output.output[0].code
-  const expected =
-    fileExp === null
-      ? null
-      : fs.readFileSync(concat(fileExp || file, 'expected'), 'utf8')
-  return expect(code).to.equal(expected)
+  const expected = fs.readFileSync(concat(file, 'expected'), 'utf8')
+  ;(async () => {
+    try {
+      const bundle = await rollup({
+        input: filePath,
+        plugins: [minifyHTML(pluginOpts)]
+      })
+      const output = await bundle.generate({ format: 'es' })
+      const code = output.output[0].code
+      expect(code).to.equal(expected)
+      done()
+    } catch (err) {
+      done(err)
+    }
+  })()
 }
 
 describe('rollup-plugin-minify-html-template-literals', () => {
-  it('works for me', () => {
-    test('default')
+  it('works for me', done => {
+    test(done, 'default')
+  })
+  it('excludes what i hate', done => {
+    test(done, 'filter', { exclude: 'fixtures/exclude.js' })
   })
 })

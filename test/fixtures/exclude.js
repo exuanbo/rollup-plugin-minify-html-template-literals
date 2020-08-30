@@ -1,4 +1,4 @@
-const template = () => html`
+const exclude = () => html`
   <style>
     .heading {
       color: blue;
@@ -14,4 +14,4 @@ const template = () => html`
   </ul>
 `
 
-export { template }
+export { exclude }
