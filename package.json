@@ -11,7 +11,7 @@
   "scripts": {
     "test": "mocha",
     "pretest": "rollup -c && npm run format",
-    "build": "rimraf index.cjs && npm test",
+    "build": "rimraf dist && npm test",
     "lint": "prettier-standard --lint '**/*.js'",
     "format": "prettier-standard --format"
   },
