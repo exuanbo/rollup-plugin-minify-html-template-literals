@@ -11,9 +11,7 @@ process.chdir(__dirname)
 const concat = (name, subdir) => {
   let filePath = path.join(__dirname, subdir, name)
   filePath = filePath.replace(/\\/g, '/')
-  if (!path.extname(filePath)) {
-    filePath += '.js'
-  }
+  if (!path.extname(filePath)) filePath += '.js'
   return filePath
 }
 
