@@ -12,7 +12,6 @@
     "test": "mocha",
     "pretest": "rollup -c && npm run format",
     "build": "rimraf dist && npm test && tsc -d --emitDeclarationOnly --declarationDir dist/types",
-    "lint": "prettier-standard --lint '**/*.js'",
     "format": "prettier-standard --format"
   },
   "repository": {
