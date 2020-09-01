@@ -1,6 +1,6 @@
 import { FilterPattern, createFilter } from '@rollup/pluginutils'
 import { Options, minifyHTMLLiterals } from 'minify-html-literals'
-import { TransformResult, Plugin } from 'rollup'
+import { Plugin, TransformResult } from 'rollup'
 
 function minifyHTML ({
   include,
@@ -10,7 +10,7 @@ function minifyHTML ({
   include?: FilterPattern
   exclude?: FilterPattern
   options?: Options
-}): Plugin {
+} = {}): Plugin {
   return {
     name: 'minify-html-template-literals',
     transform: (code: string, id: string): TransformResult => {
@@ -18,7 +18,8 @@ function minifyHTML ({
         const filter = createFilter(include, exclude)
         if (!filter(id)) return null
       }
-      return minifyHTMLLiterals(code, { fileName: id, ...options }).code
+      const result = minifyHTMLLiterals(code, { fileName: id, ...options })
+      return result ? result.code : null
     }
   }
 }
