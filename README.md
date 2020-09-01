@@ -11,6 +11,12 @@ Uses [minify-html-literals](https://www.npmjs.com/package/minify-html-literals) 
 
 This plugin supports Rollup v2.
 
+## Install
+
+```bash
+npm install --save-dev rollup-plugin-minify-html-template-literals
+```
+
 ## Usage
 
 ```js
