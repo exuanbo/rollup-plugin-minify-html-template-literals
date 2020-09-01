@@ -4,14 +4,14 @@
   "description": "Minifies HTML template literal strings",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha",
     "pretest": "rollup -c && npm run format",
-    "build": "rimraf dist && npm test",
+    "build": "rimraf dist && npm test && tsc -d --emitDeclarationOnly --declarationDir dist/types",
     "lint": "prettier-standard --lint '**/*.js'",
     "format": "prettier-standard --format"
   },
