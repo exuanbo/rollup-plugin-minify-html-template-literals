@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "6.1.0",
-    "chai": "4.2.0",
+    "chai": "4.5.0",
     "mocha": "8.4.0",
     "prettier-standard": "16.4.1",
     "rollup": "2.37.1"
